@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Activities\**" />
+    <EmbeddedResource Remove="Activities\**" />
+    <None Remove="Activities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="WebApiWorkflow.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="NConsole" Version="3.12.6605.26941" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IMP4CMACGM.CodeGeneration\IMP4CMACGM.CodeGeneration.csproj" />
+    <ProjectReference Include="..\IMP4CMACGM.Core\IMP4CMACGM.Core.csproj" />
+    <ProjectReference Include="..\IMP4CMACGM.Generation.WebApi\IMP4CMACGM.Generation.WebApi.csproj" />
+  </ItemGroup>
+
+</Project>

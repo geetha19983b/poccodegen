@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SwaggerCodeGen\AspDotNetCoreMustacheTemplate\bodyParam.mustache" />
+    <None Remove="SwaggerCodeGen\AspDotNetCoreMustacheTemplate\build.bat.mustache" />
+    <None Remove="SwaggerCodeGen\swagger-codegen-cli-3.0.16.jar" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="SwaggerCodeGen\AspDotNetCoreMustacheTemplate\bodyParam.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwaggerCodeGen\swagger-codegen-cli-3.0.16.jar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IMP4CMACGM.CodeGeneration.CSharp\IMP4CMACGM.CodeGeneration.CSharp.csproj" />
+    <ProjectReference Include="..\IMP4CMACGM.Core\IMP4CMACGM.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SwaggerCodeGen\AspDotNetCoreMustacheTemplate\3.0\Filters\" />
+    <Folder Include="SwaggerCodeGen\AspDotNetCoreMustacheTemplate\Filters\" />
+  </ItemGroup>
+
+</Project>

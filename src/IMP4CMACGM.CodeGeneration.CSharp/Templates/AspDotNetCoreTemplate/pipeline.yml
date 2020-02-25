@@ -1,0 +1,3 @@
+pipelineType: net
+tests:
+ - CMACGM.ECommerce.CustomerShipment.Tests.Unit

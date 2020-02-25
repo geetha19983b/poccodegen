@@ -1,0 +1,111 @@
+{
+    "RootWebAPIProjectNameSuffix": "Api",
+    "ApiVersion": "v1",
+    "DotnetCoreVersion": "3.0",
+    "webApiPackages": [
+        {
+            "packageName": "Newtonsoft.Json",
+            "version": "12.0.1"
+        },
+        {
+            "packageName": "Serilog.AspNetCore",
+            "version": "3.2.0"
+        },
+        {
+            "packageName": "Swashbuckle.AspNetCore",
+            "version": "5.0.0"
+        },
+        {
+            "packageName": "Swashbuckle.AspNetCore.ReDoc",
+            "version": "5.0.0"
+        },
+        {
+            "packageName": "Swashbuckle.AspNetCore.Annotations",
+            "version": "5.0.0"
+        }
+    ],
+    "pollyWebApiPackage": {
+        "packageName": "Microsoft.Extensions.Http.Polly",
+        "version": "3.1.0"
+    },
+    "steeltoeWebApiPackage": {
+        "packageName": "Steeltoe.CircuitBreaker.HystrixCore",
+        "version": "2.4.0"
+    },
+    "mongoDBDriver": {
+        "packageName": "MongoDB.Driver",
+        "version": "2.10.2"
+    },
+    "mongoDBDriverCore": {
+        "packageName": "MongoDB.Driver.Core",
+        "version": "2.10.2"
+    },
+    "mongoBSON": {
+        "packageName": "MongoDB.Bson",
+        "version": "2.10.2"
+    },
+    "mongoHealthCheck": {
+        "packageName": "AspNetCore.HealthChecks.MongoDb",
+        "version": "3.0.1"
+    },
+    "subProjects": [
+        {
+            "subProjectName": "Business",
+            "subProjectPath": "Business",
+            "subProjectType": "classlib",
+            "projectDependencies": [ "Domain" ],
+            "packages": [
+                {
+                    "packageName": "Newtonsoft.Json",
+                    "version": "12.0.1"
+                }
+
+            ]
+        },
+        {
+            "subProjectName": "Domain",
+            "subProjectPath": "Domain",
+            "subProjectType": "classlib",
+            "projectDependencies": [],
+            "packages": [
+                {
+                    "packageName": "Newtonsoft.Json",
+                    "version": "12.0.1"
+                }
+            ]
+        },
+        {
+            "subProjectName": "Repository",
+            "subProjectPath": "Repository",
+            "subProjectType": "classlib",
+            "projectDependencies": [ "Domain" ],
+            "packages": [
+                {
+                    "packageName": "Newtonsoft.Json",
+                    "version": "12.0.1"
+                },
+                {
+                    "packageName": "MongoDB.Driver",
+                    "version": "2.10.2"
+                },
+                {
+                    "packageName": "MongoDB.Driver.Core",
+                    "version": "2.10.2"
+                },
+                {
+                    "packageName": "MongoDB.Bson",
+                    "version": "2.10.2"
+                }
+            ]
+        }
+    ],
+    "testProject": {
+        "rootTestDirectory": "tests",
+        "TestProjectNameSuffix": "Tests.Unit",
+        "TestProjectType": "mstest",
+        "projectDependencies": [],
+        "packages": []
+    }
+
+
+}

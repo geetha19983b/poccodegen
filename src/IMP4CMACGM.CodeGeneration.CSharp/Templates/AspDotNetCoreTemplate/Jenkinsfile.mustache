@@ -1,0 +1,27 @@
+import com.cma.integration.pipeline.EventManager
+import com.cma.integration.pipeline.interfaces.IEvent
+@Library('cmacgm_functions@master') _
+
+List<IEvent>
+    hooksBuild = []
+    hooksBuild.add(new IEvent() {
+    def pre(steps) {
+    def sourceVersion = steps.env.GIT_COMMIT[0..7]
+    withEnv(["BUILD_SOURCESDIRECTORY=$steps.env.WORKSPACE","BUILD_SOURCEVERSION=$sourceVersion"]) {
+    def pwScript = readFile "${steps.env.WORKSPACE}/UpdateAssembly.ps1"
+    powershell(pwScript)
+    }
+    }
+
+    def post(steps) {
+    }
+
+    })
+    Map<EventManager.Stage, List<IEvent>> newevents = [:]
+newevents.put(EventManager.Stage.BUILD, hooksBuild)
+
+def thissteps = this
+default_pipeline {
+    steps = thissteps
+    events = newevents
+}

@@ -1,0 +1,38 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore;
+using Serilog;
+
+namespace {{packageName}}
+{
+    /// <summary>
+    /// Program
+    ///</summary>
+    public class Program
+    {
+        /// <summary>
+        /// Main
+        ///</summary>
+        ///<param name="args"></param>
+        public static void Main(string[] args)
+        {
+            CreateWebHostBuilder(args).Build().Run();
+        }
+
+        /// <summary>
+        /// Create the web host builder.
+        ///</summary>
+        ///<param name="args"></param>
+        /// <returns>IWebHostBuilder</returns>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(c =>
+                {
+                    // Below appsetting.json will be mounted during runtime using Kubernetes ConfigMaps
+                    c.AddJsonFile("config/appsettings.json", optional: true, reloadOnChange: true);
+                    c.AddEnvironmentVariables();
+                })
+                .UseStartup<Startup>()
+                .UseSerilog();
+    }
+    }

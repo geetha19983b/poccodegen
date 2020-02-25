@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\AspDotNetCoreTemplate\appsettings.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\deployit-manifest.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\Dockerfile.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\gitignore.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\Jenkinsfile.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\pipeline.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\Startup.mustache" />
+    <None Remove="Templates\AspDotNetCoreTemplate\UpdateAssembly.mustache" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Templates\AspDotNetCoreTemplate\appsettings.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\deployit-manifest.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\Dockerfile.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\gitignore.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\Jenkinsfile.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\pipeline.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\Startup.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\AspDotNetCoreTemplate\UpdateAssembly.mustache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Stubble.Core" Version="1.6.3" />
+    <PackageReference Include="Stubble.Extensions.JsonNet" Version="1.2.3" />
+  </ItemGroup>
+
+</Project>

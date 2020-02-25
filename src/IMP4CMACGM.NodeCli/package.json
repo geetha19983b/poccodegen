@@ -1,0 +1,26 @@
+{
+  "name": "imp4-cmacgm.node-cli",
+  "version": "0.0.0",
+  "description": "IMP4CMACGM.NodeCli",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "arg": "^4.1.0",
+    "axios": "^0.19.2",
+    "chalk": "^2.4.2",
+    "commander": "^4.1.1",
+    "covgen": "^3.1.0",
+    "esm": "^3.2.18",
+    "execa": "^1.0.0",
+    "gitignore": "^0.6.0",
+    "inquirer": "^6.5.2",
+    "listr": "^0.14.3",
+    "minimist": "^1.2.0",
+    "ncp": "^2.0.0",
+    "ora": "^4.0.3",
+    "pkg-install": "^0.2.0",
+    "spdx-license-list": "^5.0.0"
+  }
+}

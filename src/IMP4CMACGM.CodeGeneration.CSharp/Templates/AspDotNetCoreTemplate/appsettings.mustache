@@ -1,0 +1,56 @@
+{
+{{#isMongo}}
+  "{{mongoConnectionName}}": "mongodb://nosql.data",
+{{/isMongo}}
+{{#isOracle}}
+ "{{oracleConnectionName}}": {
+    "myDb1": "Server=myServer;Database=myDb1;Trusted_Connection=True;"
+  },
+{{/isOracle}}
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    }
+  },
+{{#isKafka}}
+  "WriteTo": [
+    {
+      "Name": "Kafka",
+      "Args": {
+        "batchSizeLimit": "2",
+        "period": "10",
+        "brokers": "localhost:9094",
+        "topic": "test"
+      }
+    }
+  ],
+  "Properties": {
+    "Application": "Kafka"
+  },
+{{/isKafka}}
+{{#isIBMMq}}
+"IBMMq": [
+  {
+    "MessageQueue": "WebSphereMQ",
+    "QueueManager": "Q1",
+    "ConnectionName": "servername.com(1515)",
+    "Channel": "SVR",
+    "Transport": "MQSeries Managed Client",
+    "Queues": [
+      {
+        "Name": "process-mobile",
+        "Address": "MST.ECOMMOBILENOTIFQUEUE.PST",
+        "RetryThreshold": "1",
+        "RetryQueueName": "process-mobile-error",
+        "PoisonQueueName": "process-mobile-poison"
+      }
+    ]
+  }
+],
+{{/isIBMMq}}
+  "AllowedHosts": "*"
+}

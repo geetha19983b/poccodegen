@@ -1,0 +1,29 @@
+{
+{{Mongo}}
+  "ConnectionString": "mongodb://nosql.data",
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    }
+  },
+{{Kafka}}
+  "WriteTo": [
+    {
+      "Name": "Kafka",
+      "Args": {
+        "batchSizeLimit": "2",
+        "period": "10",
+        "brokers": "localhost:9094",
+        "topic": "test"
+      }
+    }
+  ],
+  "Properties": {
+    "Application": "Kafka"
+  },
+  "AllowedHosts": "*"
+}

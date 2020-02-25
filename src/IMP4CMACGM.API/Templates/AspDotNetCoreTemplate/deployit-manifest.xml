@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="version" application="eCommerce-Api-Shipment">
+	<orchestrator />
+	<application />
+	<deployables>
+		<iis.WebDeployContent name="CMACGM.ECommerce.CustomerShipment" file="CMACGM.ECommerce.CustomerShipment.zip">
+			<tags>
+				<value>shipment-api-wcf</value>
+			</tags>
+			<scanPlaceholders>true</scanPlaceholders>
+			<websiteName>{{NET_ECOMMERCE-API-SHIPMENT_WEBSITE_NAME}}</websiteName>
+			<websitePhysicalPath>{{NET_ECOMMERCE-API-SHIPMENT_WEBSITE_PHYSICALPATH}}</websitePhysicalPath>
+		</iis.WebDeployContent>
+	</deployables>
+	<applicationDependencies />
+</udm.DeploymentPackage>

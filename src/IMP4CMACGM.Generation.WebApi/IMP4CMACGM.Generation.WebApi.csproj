@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="WebApiCodeGenerationWorkflow.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="WebApiProjectStructure.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="WebApiProjectStructure.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elsa.Activities.Workflows" Version="1.2.1.19" />
+    <PackageReference Include="Elsa.Core" Version="1.2.1.19" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IMP4CMACGM.CodeGeneration\IMP4CMACGM.CodeGeneration.csproj" />
+    <ProjectReference Include="..\IMP4CMACGM.Core\IMP4CMACGM.Core.csproj" />
+  </ItemGroup>
+
+</Project>

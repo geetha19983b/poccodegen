@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="version" application="eCommerce-Api-{{packageName}}">
+	<orchestrator />
+	<application />
+	<deployables>
+		<iis.WebDeployContent name="{{packageName}}" file="{{packageName}}.zip">
+			<tags>
+				<value>{{packageNameLowerCase}}-api-wcf</value>
+			</tags>
+			<scanPlaceholders>true</scanPlaceholders>
+			<websiteName>{{websiteName}}</websiteName>
+			<websitePhysicalPath>{{websitePhysicalPath}}</websitePhysicalPath>
+		</iis.WebDeployContent>
+	</deployables>
+	<applicationDependencies />
+</udm.DeploymentPackage>

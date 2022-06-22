@@ -18,7 +18,7 @@
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
     <PackageReference Include="NConsole" Version="3.12.6605.26941" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
